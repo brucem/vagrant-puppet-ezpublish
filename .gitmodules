@@ -1,3 +1,0 @@
-[submodule "puppet"]
-	path = puppet
-	url = git@github.com:brucem/puppet-ezpublish-collection.git
