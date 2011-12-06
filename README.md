@@ -1,9 +1,10 @@
-eZ Publish Virtual MAchines
+eZ Publish Virtual Machine
 ============
-This is a sample setup of Vagrant that uses puppet to provision a Virtual
-Machine running eZ Publish.  It's a quick and easy way to check out the latest
-community versions of eZ Publish without the hassle of seting up a specific
-environment.
+This is a sample setup of Vagrant that uses puppet to provision a virtual
+machine running eZ Publish.
+
+It's a quick and easy way to check out the latest community versions of eZ
+Publish without the hassle of seting up a specific environment.
 
 Requirements
 ============
