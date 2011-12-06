@@ -6,26 +6,44 @@ group { "puppet": ensure => "present" }
 
 # Set FQDN fir virtualbox
 if $virtual == "virtualbox" and $fqdn == '' {
-    $fqdn = "localhost"
+    $fqdn = 'localhost'
 }
-# MYSQL root password
+
+# Pick the user depending how we are called.
+if $virtual == "virtualbox"  {
+    $vhostowner = 'vagrant'
+} else {
+    $vhostowner = 'ubuntu'
+}
+
+user { $vhostowner:
+    ensure => present,
+}
+
+# MYSQL root password - change this to something else!
 $mysql_password = "setmysqlpasswordhere" 
 
 include ezpublish
 
+# Setup a vhost on the domain ezdemo.localhost running ithe latest version of
+# eZpublish 
+# Add an entry for ezdemo.localhost to your local hosts file
 ezpublish::vhost { 'default': 
-    domain          => 'ezdemo.localhost',
+    domain => 'ezdemo.localhost',
+    user   => $vhostowner
 }
+
 #ezpublish::vhost { 2011.10:
 #    domain          => 'ezdemo.201109.localhost',
 #    db_name         => 'ez_demo_201109',
 #    db_user         => 'ez_demo_201109',
 #    db_pass         => 'differentpassword',
-#    ez_primary_lang => 'eng-AU',
 #    ez_site_title   => '201109 Demo',
 #    ez_package      => 'ezflow_site',
 #    version         => '2011.9',
+#    user            => $vhostowner
 #}
+#
 #ezpublish::vhost { 2011.9:
 #    domain          => 'ezdemo.201108.localhost',
 #    db_name         => 'ez_demo_201108',
@@ -35,4 +53,5 @@ ezpublish::vhost { 'default':
 #    ez_site_title   => '201108 Demo',
 #    ez_package      => 'ezflow_site',
 #    version         => '2011.8',
+#    user            => $vhostowner
 #}
