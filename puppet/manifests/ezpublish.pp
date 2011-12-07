@@ -11,12 +11,12 @@ if $virtual == "virtualbox" and $fqdn == '' {
 
 # Pick the user depending how we are called.
 if $virtual == "virtualbox"  {
-    $vhostowner = 'vagrant'
+    $vhost_owner = 'vagrant'
 } else {
-    $vhostowner = 'ubuntu'
+    $vhost_owner = 'ubuntu'
 }
 
-user { $vhostowner:
+user { $vhost_owner:
     ensure => present,
 }
 
@@ -30,7 +30,7 @@ include ezpublish
 # Add an entry for ezdemo.localhost to your local hosts file
 ezpublish::vhost { 'default': 
     domain => 'ezdemo.localhost',
-    user   => $vhostowner
+    user   => $vhost_owner
 }
 
 #ezpublish::vhost { 2011.10:
