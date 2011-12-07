@@ -17,7 +17,6 @@ Assumes that you have ruby, ssh & git installed on you system.
 
 Getting started
 ===============
-
 The following steps will setup a VM for development.  The setup process will
 take some time as there are some large (~400 M) downloads. This will only
 happen the first time this process is run.
@@ -48,7 +47,24 @@ You'll be presented with the eZPublish configuration wizard. A kickstart.ini
 has been created with the required values so the setup will proceed with
 minimal user input.
 
-4 Halt VM
+The admin interface will be found at http://33.33.33.10/ezflow_site_admin
+Login: admin
+Password: publish
+
+4 SSH into the VM
+-----------------
+To ssh into the VM run the following command:
+
+    vagrant ssh
+
+eZ Publish can be found in the directory  /var/www/ezdemo.localhost/htdocs/
+
+5 Halt VM
 ----------
+The following command will stop the VM:
+
     vagrant halt
 
+It can be restarted by running:
+
+    vagrant up
