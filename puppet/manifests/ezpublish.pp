@@ -23,7 +23,7 @@ user { $vhost_owner:
 # MYSQL root password - change this to something else!
 $mysql_password = "setmysqlpasswordhere" 
 
-include ezpublish
+include ezpublish::standalone
 
 # Setup a vhost on the domain ezdemo.localhost running ithe latest version of
 # eZpublish 
