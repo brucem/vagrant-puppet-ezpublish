@@ -24,14 +24,36 @@ user { $vhost_owner:
 $mysql_password = "setmysqlpasswordhere" 
 
 include ezpublish::standalone
+include ezpublish::community::latest
 
 # Setup a vhost on the domain ezdemo.localhost running ithe latest version of
 # eZpublish 
 # Add an entry for ezdemo.localhost to your local hosts file
-ezpublish::vhost { 'default': 
-    domain => 'ezdemo.localhost',
-    user   => $vhost_owner
+class ezpublish::community::latest
+{
+    $domain  = 'ezdemo.localhost'
+    $db_name = 'ezdemo'
+    $db_user = 'ezdemo'
+    $db_pass = 'ezdemo'
+    $db_host = 'localhost'
+
+    ezpublish::vhost { $domain:
+        user     => $vhost_owner,
+    }
+
+    ezpublish::database { $db_name:
+        db_name => $db_name,
+        db_user => $db_user,
+        db_pass => $db_pass,
+        db_host => $db_host,
+    }
+
+    ezpublish::install::package { 'default':
+        vhost   => 'ezdemo.localhost',
+        require => [Ezpublish::Vhost[$domain], Ezpublish::Database[$db_name]]
+    }
 }
+
 
 #ezpublish::vhost { 2011.10:
 #    domain          => 'ezdemo.201109.localhost',
