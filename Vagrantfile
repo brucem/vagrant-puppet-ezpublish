@@ -20,10 +20,10 @@ Vagrant.configure("2") do |config|
   
   config.vm.provision :shell, :path => "bootstrap-vagrant-ubuntu.sh"
 
-#  config.vm.provision :puppet do |puppet|
-#    puppet.manifests_path = "puppet/manifests"
-#    puppet.manifest_file  = "ezpublish5_standalone.pp"
-#    #puppet.options        = "--verbose --debug"
-#  end
+  config.vm.provision :puppet do |puppet|
+    puppet.manifests_path = "puppet/manifests"
+    puppet.manifest_file  = "ezpublish5_standalone.pp"
+    #puppet.options        = "--verbose --debug"
+  end
 
 end
