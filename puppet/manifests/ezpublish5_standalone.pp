@@ -25,7 +25,7 @@ node default inherits base {
 
   #
   # Setup a standalone eZ Publish system and install eZ Publish Community
-  # Project 2013.1 in the default docroot
+  # Project 2013.4 in the default docroot
   #
 
   # Prepare a standalone system to run eZ Publish (Web + DB)
