@@ -13,18 +13,17 @@ On your local machine install:
 - [VirtualBox](http://www.virtualbox.org/wiki/Downloads)
 - [Vagrant](http://vagrantup.com/)
 
-Assumes that you have ssh & git installed on you system.
+Assumes that you have ssh & git installed on your system.
 
 Getting started
 ---------------
-The following steps will set up a VM for development. The set up process will
-take some time as there are some large (~400 MB) downloads. This will only
-happen the first time this process is run.
+The following steps will set up a Ubuntu 12.04 LTS based VM for development.
+The set up process will take some time as there are some large (~400 MB)
+downloads. This will only happen the first time this process is run.
 
 1. Checkout the environment
 ---------------------------
-Checks out server config (puppet), VM configuration (Vagrant) and installed required
-puppet modules.
+Checks out server configuration (puppet) and VM configuration (Vagrant).
 
 Run the following commands:
 
@@ -45,9 +44,6 @@ Point you browser at http://33.33.33.10/
 You'll be presented with the eZ Publish configuration wizard. eZ Publish can be
 installed as per https://confluence.ez.no/display/EZP/The+setup+wizard
 
-In this version the date_default_timezone_set is not set so this test need to
-be skipped. This ssue will be addressed soon.
-
 **Outgoing Email**  
 Select "Sendmail/MTA"  
 
@@ -55,7 +51,6 @@ Select "Sendmail/MTA"
 Servername: localhost  
 Username: ezpublish  
 Password: password  
-
 
 4. SSH into the VM
 -----------------
