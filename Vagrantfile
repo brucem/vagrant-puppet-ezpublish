@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
 
   # Ubuntu 
   config.vm.box = "precise32"
-  config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
+  config.vm.box_url = "http://files.vagrantup.com/precise32.box"
 
   # Assign this VM to a host-only network IP, allowing you to access it
   # via the IP. Host-only networks can talk to the host machine as well as
