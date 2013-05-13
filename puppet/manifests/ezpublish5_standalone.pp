@@ -42,8 +42,8 @@ node default inherits base {
 
   # Install eZ Publish 5 (Community Project 2013.4) from url in the default DocRoot
   ezpublish::install { 'eZ Publish Community Project 2013.4':
-    download_file => 'ezpublish5_community_project-2013.4-gpl-full.tar.gz',
-    download_url  => 'http://share.ez.no/content/download/149574/883017/version/1/file/ezpublish5_community_project-2013.4-gpl-full.tar.gz',
+    file_name     => 'ezpublish5_community_project-2013.4-gpl-full.tar.gz',
+    download_url  => 'http://share.ez.no/content/download/149574/883017/version/1/file',
     destination   => '/var/www'
   }
 
