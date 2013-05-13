@@ -47,4 +47,10 @@ node default inherits base {
     destination   => '/var/www'
   }
 
+  #Example of installing eZ Publish 5 from file placed in project folder where you do `vagrant up`
+  #ezpublish::install { 'eZ Publish Platform 5.1 Trial':
+  #  file_name     => 'ezpublish5-5.1.0-ee-ttl-full.tar.gz',
+  #  download_url  => '',
+  #  destination   => '/var/www'
+  #}
 }
