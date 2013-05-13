@@ -24,8 +24,7 @@ node base {
 node default inherits base {
 
   #
-  # Setup a standalone eZ Publish system and install eZ Publish Community
-  # Project 2013.4 in the default docroot
+  # Setup a standalone eZ Publish system and install it in the default docroot
   #
 
   # Prepare a standalone system to run eZ Publish (Web + DB)
@@ -41,11 +40,17 @@ node default inherits base {
     db_pass => 'password',
   }
 
-  # Install eZ Publish Community Project 2013.4 in the default DocRoot
+  # Install eZ Publish 5 (Community Project 2013.4) from url in the default DocRoot
   ezpublish::install { 'eZ Publish Community Project 2013.4':
-    download_file => 'ezpublish5_community_project-2013.4-gpl-full.tar.gz',
-    download_url  => 'http://share.ez.no/content/download/149574/883017/version/1/file/ezpublish5_community_project-2013.4-gpl-full.tar.gz',
+    file_name     => 'ezpublish5_community_project-2013.4-gpl-full.tar.gz',
+    download_url  => 'http://share.ez.no/content/download/149574/883017/version/1/file',
     destination   => '/var/www'
   }
 
+  #Example of installing eZ Publish 5 from file placed in project folder where you do `vagrant up`
+  #ezpublish::install { 'eZ Publish Platform 5.1 Trial':
+  #  file_name     => 'ezpublish5-5.1.0-ee-ttl-full.tar.gz',
+  #  download_url  => '',
+  #  destination   => '/var/www'
+  #}
 }
