@@ -24,7 +24,7 @@ node base {
 node default inherits base {
 
   #
-  # Setup a standalone eZ Publish system and install Community Project 2013.4
+  # Setup a standalone eZ Publish system and install Community Project 2013.5
   # in the default docroot
   #
 
@@ -41,10 +41,10 @@ node default inherits base {
     db_pass => 'password',
   }
 
-  # Install eZ Publish 5 (Community Project 2013.4) from url in the default
+  # Install eZ Publish 5 (Community Project 2013.5) from url in the default
   # DocRoot
-  ezpublish::install { 'eZ Publish Community Project 2013.4':
-    src  => 'http://share.ez.no/content/download/149574/883017/version/1/file/ezpublish5_community_project-2013.4-gpl-full.tar.gz',
+  ezpublish::install { 'eZ Publish Community Project 2013.5':
+    src  => 'http://share.ez.no/content/download/150667/890211/version/1/file/ezpublish5_community_project-2013.05-gpl-full.tar.gz',
     dest => '/var/www'
   }
 
