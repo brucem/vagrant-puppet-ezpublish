@@ -15,7 +15,6 @@ if [ ! -e ~/.bootstrap-vagrant ]; then
     apt-get -y install puppet
 
     apt-get -y autoremove
-    apt-get clean
 
     # Install required puppet modules
     PUPPET_MODULES=('brucem/ezpublish' 'puppetlabs/ntp')
