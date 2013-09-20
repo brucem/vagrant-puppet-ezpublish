@@ -4,9 +4,7 @@ node base {
   group { 'puppet': ensure => 'present' }
 
   # Install NTP to keep the system time correct
-  class { 'ntp':
-    ensure => 'running',
-  }
+  class { 'ntp': }
 
   # Postfix to provide a local mail system
   package { 'postfix':
