@@ -3,7 +3,7 @@
 # Install required puppet modules
 
 if [ ! -e ~/.bootstrap-install-puppet-modules ]; then
-    PUPPET_MODULES=('brucem/ezpublish --version 0.0.7' 'puppetlabs/ntp --version 2.0.1')
+    PUPPET_MODULES=('brucem/ezpublish --version 0.1.0' 'puppetlabs/ntp --version 2.0.1')
 
     for ((i = 0; i < ${#PUPPET_MODULES[@]}; i++))
     do
