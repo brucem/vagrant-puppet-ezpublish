@@ -42,15 +42,17 @@ node default inherits base {
   # Install eZ Publish 5 (Community Project 2013.07) from url in the default
   # DocRoot
   ezpublish::install { 'eZ Publish Community Project 2013.07':
-    src  => 'http://share.ez.no/content/download/152505/900457/version/1/file/ezpublish5_community_project-2013.07-gpl-full.tar.gz',
-    dest => '/var/www'
+    src     => 'http://share.ez.no/content/download/152505/900457/version/1/file/ezpublish5_community_project-2013.07-gpl-full.tar.gz',
+    dest    => '/var/www/default',
+    require => Class['ezpublish::default']
   }
 
   # Example of installing eZ Publish 5 from file placed in project folder where
   # you do `vagrant up`
   #
   #ezpublish::install { 'eZ Publish Platform 5.1 Trial':
-  #  src  => '/vagrant/ezpublish5-5.1.0-ee-ttl-full.tar.gz',
-  #  dest => '/var/www'
+  #  src     => '/vagrant/ezpublish5-5.1.0-ee-ttl-full.tar.gz',
+  #  dest    => '/var/www/default',
+  #  require => Class['ezpublish::default']
   #}
 }
