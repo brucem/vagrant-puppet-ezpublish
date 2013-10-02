@@ -3,5 +3,5 @@ forge "http://forge.puppetlabs.com"
 mod "puppetlabs/ntp" ,"2.0.1"
 
 mod "ezpublish",
- :git => "git@github.com:brucem/puppet-ezpublish.git",
+ :git => "git@github.com:brucem/puppet-ezpublish.git"
 
