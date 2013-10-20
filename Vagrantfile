@@ -14,7 +14,7 @@ VB_MEMORY = ENV['VB_MEMORY'] || 1024
 
 # AWS
 AWS_REGION = ENV['AWS_REGION'] || "us-east-1"
-AWS_AMI    = ENV['AWS_AMI']    || "ami-1b135e72"
+AWS_AMI    = ENV['AWS_AMI']    || "ami-a53264cc"
 AMI_INSTANCE_NAME = ENV['AWS_INSTANCE_NAME'] || "eZ Publish"
 AMI_INSTANCE_TYPE = ENV['AWS_INSTANCE_TYPE'] || "m1.small"
 
